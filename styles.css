@@ -14,9 +14,6 @@ body{
    font-family: 'Quicksand', sans-serif;
 }
 /*navbar mobile menu*/
-.inactive-mobile{
-   display: none;
-}
 .mobile-menu{
    position: absolute;
    top: 64px;
@@ -66,6 +63,7 @@ nav{
 }
 .menu{
    display: none;
+   cursor: pointer;
 }
 .logo{
    width: 100px;
@@ -104,6 +102,7 @@ nav{
 }
 .navbar-shopping-cart{
    position: relative;
+   cursor: pointer;
 }
 .navbar-shopping-cart div{
    width: 13px;
@@ -155,9 +154,6 @@ nav{
     display: inline-block;
 }
 /*clase 13*/
-.inactive-cart{
-   display: none;
-}
 .product-detail{
    background-color: var(--white);
    width: 360px;
