@@ -5,6 +5,8 @@ const hamburguerButton = document.querySelector('.menu');
 const shoppingLogo = document.querySelector('.navbar-shopping-cart');
 const shoppingCart = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
+const productDetailContainer = document.querySelector('#productDetail');
+const productDetailContClose = document.querySelector('.product-detail-close');
 
 navEmail.addEventListener('click', toggleDesktopMenu);
 
@@ -47,11 +49,21 @@ function toggleShoppingCart () {
 
 }
 
+function openProductDetailAside () {
+    productDetailContainer.classList.remove("inactive");
+}
+
+productDetailContClose.addEventListener('click', closeProductDetailAside);
+
+function closeProductDetailAside () {
+    productDetailContainer.classList.add("inactive");
+}
+
 const productList = [];
 productList.push({
     name: 'motorcycle',
     price: 20000000,
-    image: 'https://2yrh403fk8vd1hz9ro2n46dd-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/2021-Royal-Enfield-Himalayan-First-Look-adventure-motorcycle-13-1024x683.jpg'
+    image: 'https://www.mundomotero.com/wp-content/uploads/2020/04/Ducati_Hypermotard_950_2021_3.jpg'
 });
 productList.push({
     name: 'mofle',
@@ -63,7 +75,7 @@ productList.push({
     price: 50000000,
     image: 'https://www.motorevistacr.com/wp-content/uploads/2021/02/Triumph-Bonneville-Bobber-2022.jpg'
 });
-
+//muestra de todos los atriburos a crear
 /* <div class="product-card">
       <img src="https://2yrh403fk8vd1hz9ro2n46dd-wpengine.netdna-ssl.com/wp-content/uploads/2020/08/2021-Royal-Enfield-Himalayan-First-Look-adventure-motorcycle-13-1024x683.jpg" alt="" class="product-img">
         <div class="product-info">
@@ -83,6 +95,7 @@ for (product of productList) {
     
     const productImg = document.createElement('img');
     productImg.setAttribute('src', product.image);
+    productImg.addEventListener('click', openProductDetailAside)
 
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
