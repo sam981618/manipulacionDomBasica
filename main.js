@@ -37,7 +37,7 @@ function toggleMobileMenu () {
 shoppingLogo.addEventListener('click', toggleShoppingCart);
 
 function toggleShoppingCart () {
-
+    
     const mobileClosed = hamburguerButtonMenu.classList.contains('inactive');
 
     if (!mobileClosed){
@@ -50,7 +50,14 @@ function toggleShoppingCart () {
 }
 
 function openProductDetailAside () {
-    productDetailContainer.classList.remove("inactive");
+    const cartClosedAside = shoppingCart.classList.contains('inactive');
+    const mobileClosedAside = hamburguerButtonMenu.classList.contains('inactive');
+
+    if (!cartClosedAside || !mobileClosedAside) {
+        hamburguerButtonMenu.classList.add("inactive");
+        shoppingCart.classList.add("inactive");
+    }
+    productDetailContainer.classList.toggle('inactive')
 }
 
 productDetailContClose.addEventListener('click', closeProductDetailAside);
